@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <video
+      src="video.mp4"
+      height="255"
+      controls
+      loop
+      muted
+      poster="Screenshot 2026-03-27 231709.png"
+    ></video>
+    <audio src="Video 10_sachin.mp3" controls loop muted ></audio>
+
+    <img src="img.svg" height="200" alt="">
+<!-- Create a website which shows videos of different category and audios of different categories.
+    You can use YouTube videos in an iframe using YouTube's embedding feature -->
+
+    <h1>🎬 My Media Website</h1>
+
+    <!-- VIDEO SECTION -->
+    <div class="section">
+        <h2>📺 Video Category</h2>
+
+        <!-- Tech Video -->
+        <h3>💻 Tech</h3>
+        <iframe width="300" height="200"
+         src="https://www.youtube.com/embed/XZwBNDGuWGU?si=OznnU-h-SNYjqULZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+         </iframe>
+
+        <!-- Music Video -->
+        <h3>🎵 Music</h3>
+        <iframe width="300" height="200"
+         src="https://www.youtube.com/embed/g4xVDns_PO4?si=h4EUb-PFgRkbxKzy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <!-- AUDIO SECTION -->
+    <div class="section">
+        <h2>🎧 Audio Category</h2>
+
+        <!-- Relaxing Audio -->
+        <h3>🌿 Relaxing</h3>
+        <audio controls>
+            <source src="Video 10_sachin.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <!-- Motivational Audio -->
+        <h3>🔥 Motivation</h3>
+        <audio controls>
+            <source src="Video 10_sachin.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+    
+  </body>
+</html>
