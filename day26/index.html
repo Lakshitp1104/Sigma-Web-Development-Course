@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Card Design</title>
+
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        }
+        .box{
+        width: 100vw;
+         height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #000000;
+        
+       
+
+        }
+      body {
+        background-color: #dce3e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      .card {
+        width: 320px;
+        background: #f3f6f8;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .tags {
+        margin-bottom: 10px;
+      }
+
+      .tags span {
+        background: #e0e6eb;
+        color: #6b7280;
+        font-size: 12px;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin-right: 5px;
+      }
+
+      h2 {
+        margin: 10px 0;
+        font-size: 22px;
+        color: #1f2937;
+      }
+
+      p {
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.5;
+      }
+
+      button {
+        display: block;
+        margin: 15px auto 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        background-color: #cfe2f3;
+        color: #2563eb;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #2563eb;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="card">
+        <img src="annie-spratt-NFqyFSvYoBU-unsplash.jpg" alt=" Image" />
+
+        <div class="card-content">
+          <div class="tags">
+            <span>location</span>
+            <span>road side</span>
+          </div>
+
+          <h2>patil cafe</h2>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur
+            sodales morbi dignissim sed diam pharetra vitae ipsum odio.
+          </p>
+
+          <button>Read More</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
