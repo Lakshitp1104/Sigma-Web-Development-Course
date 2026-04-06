@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        :root{
+            --color: #a71a1a;
+            --seccolor : #8dec0f;
+            --defpad: 10px 20px;
+            --defop: 0.4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            background-color: var(--color);
+            color: white;
+       
+        }
+        ul {
+            display: flex;
+        }
+        ul li {
+            display: inline-block;
+            padding: var(--defpad);
+            border: 2px solide var(--color);
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: var(--seccolor);
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+   <div class="content">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident
+      assumenda aliquid perferendis quisquam architecto, officia blanditiis
+      omnis ducimus reprehenderit, dolorem molestiae ullam et consequuntur quis!
+    </div>
+  </body>
+</html>
