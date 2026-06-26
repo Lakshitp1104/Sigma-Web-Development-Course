@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Page Layout</title>
+   <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#222;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width:100%;
+    min-height:200vh;      /* Makes page taller than screen */
+    background:#111;
+    padding:20px;
+}
+
+.top-bar{
+    height:30px;
+    background:#e79bf5;
+    margin-bottom:20px;
+}
+
+.green-box{
+    background:green;
+    padding:20px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.box{
+    width:150px;
+    height:150px;
+}
+
+.pink{
+    background:#ff8f96;
+}
+
+.blue{
+    background:#4d87db;
+}
+
+.card{
+    width:60%;
+    margin:30px auto;
+    border:2px solid #555;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    color:white;
+}
+
+.content{
+    color:white;
+    padding:30px;
+    line-height:1.8;
+}
+
+.content h1{
+    margin:40px 0 15px;
+}
+
+.bottom-bar{
+    height:40px;
+    background:#ececff;
+    margin-top:30px;
+}
+.container{
+    width:100%;
+    min-height:200vh;
+    background:#111;
+    padding:20px;
+    position:absolute;   /* Important */
+}
+
+.circle{
+    width:50px;
+    height:50px;
+    background:orange;
+    border-radius:50%;
+
+    position:absolute;
+    right:20px;      /* Right side */
+    bottom:20px;     /* Bottom of container */
+}
+
+
+
+   </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top-bar"></div>
+
+    <div class="green-box">
+        <div class="box pink"></div>
+        <div class="box blue"></div>
+    </div>
+
+    <div class="card">
+        <h2>Welcome to this Sigma Web Development Express</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quisquam, asperiores! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Reprehenderit, numquam.
+        </p>
+    </div>
+
+    <!-- Extra content to make page scroll -->
+    <section class="content">
+        <h1>Section 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+        <h1>Section 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+        <h1>Section 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+
+        <h1>Section 4</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+    </section>
+
+    <div class="bottom-bar"></div>
+    <div class="container">
+    <!-- Your content -->
+
+    <div class="circle"></div>
+</div>
+</div>
+
+</body>
+</html>
