@@ -1,0 +1,23 @@
+<!-- The Sum Selector: You are working on a function that should sum all numbers in an array until it encounters a negative number. Write a function that performs this summation.
+
+ -->
+
+<!doctype html>
+<html>
+  <body>
+    <script>
+      function sumUntilNegative(arr) {
+        let sum = 0;
+
+        for (let num of arr) {
+          if (num < 0) break;
+          sum += num;
+        }
+
+        console.log(sum);
+      }
+
+      sumUntilNegative([5, 10, 15, -3, 20]);
+    </script>
+  </body>
+</html>

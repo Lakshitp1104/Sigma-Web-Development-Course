@@ -1,0 +1,21 @@
+<!-- The Token Manager: You are developing a user authentication system, and you need to manage user authentication tokens. Implement a function named setAuthToken that takes an authentication token and sets it in localStorage with an expiration time. -->
+
+<!doctype html>
+<html>
+  <body>
+    <script>
+      function setAuthToken(token) {
+        let auth = {
+          token: token,
+          expires: Date.now() + 3600000,
+        };
+
+        localStorage.setItem("authToken", JSON.stringify(auth));
+
+        console.log("Token Saved");
+      }
+
+      setAuthToken("ABC123");
+    </script>
+  </body>
+</html>
