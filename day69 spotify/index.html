@@ -1,125 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/utility.css">
-    <title>Spotify - Web Player: Music for everyone</title>
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
 </head>
-
 <body>
-    <div class="container flex bg-black">
-        <div class="left">
-            <div class="close">
-                <button id="closeSidebar" class="iconButton" type="button" aria-label="Close library">
-                    <img width="30" class="invert" src="img/close.svg" alt="">
-                </button>
-            </div>
-            <div class="home bg-grey rounded m-1 p-1">
-                <div class="logo"><img width="110" class="invert" src="img/logo.svg" alt=""></div>
-                <ul>
-                    <li><img class="invert" src="img/home.svg" alt="home">Home</li>
-                    <li><img class="invert" src="img/search.svg" alt="search">Search</li>
-                </ul>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon">♫</div>
+                    <span>Spotify</span>
+                </div>
             </div>
 
-            <div class="library bg-grey rounded m-1 p-1">
-                <div class="heading">
-                    <img class="invert" src="img/playlist.svg" alt="">
-                    <h2>
-                        Your Library
-                    </h2>
+            <nav class="sidebar-nav">
+                <a href="#home" class="nav-item active" data-section="home">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </a>
+                <a href="#search" class="nav-item" data-section="search">
+                    <span class="icon">🔍</span>
+                    <span>Search</span>
+                </a>
+                <a href="#library" class="nav-item" data-section="library">
+                    <span class="icon">📚</span>
+                    <span>Your Library</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item" id="create-playlist-btn">
+                    <span class="icon">➕</span>
+                    <span>Create Playlist</span>
+                </a>
+                <a href="#liked" class="nav-item" data-section="liked">
+                    <span class="icon">❤️</span>
+                    <span>Liked Songs</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-playlists" id="playlists-container">
+                <!-- Playlists will be added dynamically -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="nav-controls">
+                    <button class="nav-btn back-btn" id="back-btn" title="Back">◀</button>
+                    <button class="nav-btn forward-btn" id="forward-btn" title="Forward">▶</button>
                 </div>
 
-                <div class="songList">
-
-                    <ul>
-
-                    </ul>
+                <div class="search-bar-container">
+                    <input type="text" class="search-bar" id="top-search" placeholder="Search songs, artists...">
                 </div>
 
-                <div class="footer">
-                    <div><a href="https://www.spotify.com/jp/legal/"><span>Legal</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/privacy/"><span>Privacy Center</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                <div class="nav-right">
+                    <button class="nav-btn theme-toggle-btn" id="theme-toggle" title="Toggle Theme">🌙</button>
+                    <button class="nav-btn premium-btn">🎵 Premium</button>
+                    <button class="nav-btn install-btn">⬇️ Install App</button>
+                    <button class="nav-btn login-btn">👤 Login</button>
+                </div>
+            </nav>
+
+            <!-- Content Area -->
+            <div class="content-wrapper">
+                <!-- Home Section -->
+                <section class="section active" id="home-section">
+                    <div class="section-header">
+                        <h1>Welcome to Spotify Clone</h1>
+                        <p>Discover, play, and enjoy your favorite music</p>
                     </div>
-                    <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
-                    <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
-                </div>
-            </div>
 
-
-        </div>
-        <div class="right bg-grey rounded">
-            <div class="header">
-                <div class="nav">
-                    <div class="hamburgerContainer">
-
-                        <button id="openSidebar" class="iconButton hamburger" type="button" aria-label="Open library"
-                            aria-expanded="false">
-                            <img width="40" class="invert" src="img/hamburger.svg" alt="">
-                        </button>
-                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
-                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                    <div class="section-title">Recently Played</div>
+                    <div class="albums-grid" id="recently-played">
+                        <!-- Recently played albums will be added here -->
                     </div>
-                </div>
-                <div class="buttons">
-                    <button class="signupbtn">Sign up</button>
-                    <button class="loginbtn">Log in</button>
-                </div>
-            </div>
-            <div class="spotifyPlaylists">
-                <h1>Spotify Playlists</h1>
-                <div class="cardContainer">  </div>
-                <div class="playbar">
-                    <input class="seekbar" id="seekbar" type="range" min="0" max="100" value="0" step="0.1"
-                        aria-label="Playback position" disabled>
-                    <div class="abovebar">
 
+                    <div class="section-title">All Albums</div>
+                    <div class="albums-grid" id="albums-grid">
+                        <!-- Albums will be loaded dynamically -->
+                    </div>
+                </section>
 
-                        <div class="songinfo" aria-live="polite">Choose a playlist to begin</div>
-                        <div class="songbuttons">
-                            <button id="previous" type="button" aria-label="Previous track" disabled>
-                                <img width="35" src="img/prevsong.svg" alt="">
-                            </button>
-                            <button id="play" type="button" aria-label="Play" disabled>
-                                <img width="35" src="img/play.svg" alt="">
-                            </button>
-                            <button id="next" type="button" aria-label="Next track" disabled>
-                                <img width="35" src="img/nextsong.svg" alt="">
-                            </button>
+                <!-- Search Section -->
+                <section class="section" id="search-section">
+                    <div class="search-content">
+                        <div class="search-form">
+                            <input type="text" class="search-input" id="search-input" placeholder="Search albums or songs...">
                         </div>
-                        <div class="timevol">
 
-                       
-                        <div class="songtime" aria-label="Playback time">00:00 / 00:00</div>
-                        <div class="volume">
-                            <button id="volumeToggle" type="button" aria-label="Mute">
-                                <img width="25" src="img/volume.svg" alt="">
-                            </button>
-                            <div class="range">
-                                <label class="visually-hidden" for="volume">Volume</label>
-                                <input type="range" name="volume" id="volume" min="0" max="100" value="100">
-                            </div>
+                        <div class="search-results" id="search-results">
+                            <div class="no-results">Start typing to search...</div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Library Section -->
+                <section class="section" id="library-section">
+                    <div class="library-content">
+                        <h2>Your Library</h2>
+                        <div class="library-items" id="library-items">
+                            <!-- Library items will be added here -->
+                        </div>
                     </div>
-                </div>
+                </section>
+
+                <!-- Liked Songs Section -->
+                <section class="section" id="liked-section">
+                    <div class="liked-content">
+                        <h2>❤️ Liked Songs</h2>
+                        <div class="songs-list" id="liked-songs-list">
+                            <!-- Liked songs will be added here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Album Detail Section -->
+                <section class="section" id="album-detail-section">
+                    <div class="album-detail-header">
+                        <button class="back-to-albums" id="back-to-albums">← Back</button>
+                        <h2 id="album-detail-title"></h2>
+                    </div>
+                    <div class="album-songs-list" id="album-songs-list">
+                        <!-- Album songs will be listed here -->
+                    </div>
+                </section>
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
-</body>
 
+    <!-- Music Player -->
+    <div class="player-container">
+        <div class="player-progress">
+            <span class="current-time" id="current-time">0:00</span>
+            <input type="range" class="progress-bar" id="progress-bar" min="0" max="100" value="0">
+            <span class="duration" id="duration-time">0:00</span>
+        </div>
+
+        <div class="player-main">
+            <div class="player-song-info">
+                <div class="player-cover">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%23181818' width='100' height='100'/%3E%3Ctext x='50' y='50' font-size='40' fill='%231DB954' text-anchor='middle' dominant-baseline='middle'%3E♫%3C/text%3E%3C/svg%3E" alt="Cover" id="player-cover">
+                </div>
+                <div class="player-info">
+                    <div class="player-song-name">Select a song</div>
+                    <div class="player-artist-name">Choose from albums</div>
+                </div>
+            </div>
+
+            <div class="player-controls">
+                <button class="control-btn shuffle-btn" id="shuffle-btn" title="Shuffle">🔀</button>
+                <button class="control-btn prev-btn" id="prev-btn" title="Previous">⏮</button>
+                <button class="control-btn play-btn" id="play-btn" title="Play">▶</button>
+                <button class="control-btn next-btn" id="next-btn" title="Next">⏭</button>
+                <button class="control-btn repeat-btn" id="repeat-btn" title="Repeat">🔁</button>
+            </div>
+
+            <div class="player-volume">
+                <button class="volume-btn" id="volume-btn" title="Mute">🔊</button>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="70">
+                <span class="volume-percent" id="volume-percent">70%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audio-player"></audio>
+
+    <!-- Modal for Create Playlist -->
+    <div class="modal" id="playlist-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create a Playlist</h2>
+                <button class="modal-close" id="modal-close">✕</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" class="playlist-input" id="playlist-name" placeholder="Enter playlist name...">
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="modal-cancel">Cancel</button>
+                <button class="btn-primary" id="modal-create">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
